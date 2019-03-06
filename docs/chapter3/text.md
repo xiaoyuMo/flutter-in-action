@@ -108,7 +108,7 @@ Text.rich(TextSpan(
 ))
 ```
 
-- 上面代码中，我们通过TextSpan实现了一个基础文本片段和一个链接片段，然后通过`Text.rich ` 方法将`TextSpan` 添加到Text中，之所以可以这样做，是因为Text其实就是RichText的一个包装，而RichText是可以显示多种样式的(富文本)的widget。
+- 上面代码中，我们通过TextSpan实现了一个基础文本片段和一个链接片段，然后通过`Text.rich ` 方法将`TextSpan` 添加到Text中，之所以可以这样做，是因为Text其实就是RichText的一个包装，而RichText是可以显示多种样式(富文本)的widget。
 - `_tapRecognizer`，它是点击链接后的一个处理器（代码已省略），关于手势识别的更多内容我们将在后面单独介绍。
 
 ### DefaultTextStyle
@@ -196,7 +196,7 @@ const textStyle = const TextStyle(
 
 如果在package包内部使用它自己定义的字体，也应该在创建文本样式时指定`package`参数，如上例所示。
 
-一个包也可以只提供字体文件而不需要在pubspec.yaml中声明。 这些文件应该包的`lib/`文件夹中。字体文件不会自动绑定到应用程序中，应用程序可以在声明字体时有选择地使用这些字体。假设一个名为my_package的包中有一个字体文件：
+一个包也可以只提供字体文件而不需要在pubspec.yaml中声明。 这些文件应该存放在包的`lib/`文件夹中。字体文件不会自动绑定到应用程序中，应用程序可以在声明字体时有选择地使用这些字体。假设一个名为my_package的包中有一个字体文件：
 
 ```
 lib/fonts/Raleway-Medium.ttf

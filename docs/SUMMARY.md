@@ -1,10 +1,11 @@
-# Summary
+﻿# Summary
 
 * [缘起](README.md)
 * [起步](chapter1/index.md)
     * [移动开发技术简介](chapter1/mobile_development_intro.md)
     * [Flutter简介](chapter1/flutter_intro.md)  
-    * [搭建Flutter开发环境](chapter1/install_flutter.md)        
+    * [搭建Flutter开发环境](chapter1/install_flutter.md)      
+    * [常见配置问题](chapter1/configuration.md)  
     * [Dart语言简介](chapter1/dart.md)    
     
 * [第一个Flutter应用](chapter2/index.md)
@@ -13,6 +14,7 @@
     * [包管理](chapter2/flutter_package_mgr.md)        
     * [资源管理](chapter2/flutter_assets_mgr.md)    
     * [调试Flutter APP](chapter2/flutter_app_debug.md)
+    * [Dart线程模型及异常捕获](chapter2/thread_model_and_error_report.md)
     
 * [基础Widgets](chapter3/index.md)
     * [Widget简介](chapter3/flutter_widget_intro.md)
@@ -24,7 +26,7 @@
     
 * [布局类Widgets](chapter4/index.md)
     * [布局类Widgets简介](chapter4/intro.md)
-    * [先行布局Row、Column](chapter4/row_and_column.md)
+    * [线性布局Row、Column](chapter4/row_and_column.md)
     * [弹性布局Flex](chapter4/flex.md)
     * [流式布局Wrap、Flow](chapter4/wrap_and_flow.md)      
     * [层叠布局Stack、Positioned](chapter4/stack.md)   
@@ -35,6 +37,7 @@
     * [装饰容器DecoratedBox](chapter5/decoratedbox.md)      
     * [变换Transform](chapter5/transform.md) 
     * [Container容器](chapter5/container.md) 
+    * [Scaffold、TabBar、底部导航](chapter5/material_scaffold.md) 
     
 * [可滚动Widgets](chapter6/index.md)
     * [可滚动Widgets简介](chapter6/intro.md)
@@ -62,10 +65,18 @@
     * [Hero动画](chapter9/hero.md) 
     * [交错动画](chapter9/stagger_animation.md) 
     
+* [自定义Widget](chapter13/index.md)
+    * [自定义Widget方法简介](chapter13/intro.md)
+    * [通过组合现有Widget实现](chapter13/combine.md)
+    * [实例：TurnBox](chapter13/turn_box.md)
+    * [CustomPaint与Canvas](chapter13/custom_paint.md) 
+    * [实例：圆形渐变进度条(自绘)](chapter13/gradient_circular_progress_demo.md) 
+    
 * [文件操作与网络请求](chapter10/index.md)
     * [文件操作](chapter10/file_operation.md)
     * [Http请求-HttpClient](chapter10/http.md)
     * [Http请求-Dio package](chapter10/dio.md) 
+    * [实例：Http分块下载](chapter10/download_with_chunks.md) 
     * [WebSocket](chapter10/websocket.md) 
     * [使用Socket API](chapter10/socket.md) 
     * [Json转Model](chapter10/json_model.md) 
@@ -77,21 +88,17 @@
     * [插件开发：实现IOS端API](chapter11/ios_implement.md)
     * [系统能力调用](todo.md) 
     
-* [国际化](todo.md)
-    * [让App支持多语言](todo.md)
-    * [监听系统语言切换](todo.md)
-    * [实现Localizations](todo.md) 
-    * [Intel包的使用](todo.md) 
+* [国际化](chapter12/index.md)
+    * [让App支持多语言](chapter12/multi_languages_support.md)
+    * [实现Localizations](chapter12/locallization_implement.md) 
+    * [使用Intl包](chapter12/intl.md) 
     
-* [Flutter 核心原理](todo.md)
-    * [Flutter UI系统](todo.md)
-    * [Widget、Element与BuildContext](todo.md)
-    * [RenderObject与RenderBox](todo.md)
-    * [Notification与事件冒泡](todo.md)
-    * [Scrollable原理](todo.md)
-    * [InheritedWidget与数据传递](todo.md) 
-    * [ParentDataWidget](todo.md) 
-    * [布局与绘制过程](todo.md)
+* [Flutter核心原理](chapter14/index.md)
+    * [Flutter UI系统](chapter14/flutter_ui_system.md)
+    * [Element和BuildContext](chapter14/element_buildcontext.md)
+    * [RenderObject与RenderBox](chapter14/render_object.md)
+    * [Flutter从启动到显示](chapter14/flutter_app_startup.md)
+
      
 * [Flutter资源汇总](todo.md)
 

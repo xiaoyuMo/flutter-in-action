@@ -13,9 +13,9 @@
 
 
 
-该计数器示例中，每点击一次右下角带“➕”好的悬浮按钮，屏幕中央的数字就会加1。
+该计数器示例中，每点击一次右下角带“➕”号的悬浮按钮，屏幕中央的数字就会加1。
 
-在这个示例中，主要Dart代码实在 **lib/main.dart** 文件中，下面我们看看该示例的源码：
+在这个示例中，主要Dart代码是在 **lib/main.dart** 文件中，下面我们看看该示例的源码：
 
 ```dart
 import 'package:flutter/material.dart';
@@ -126,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
    - 在Flutter中，大多数东西都是widget，包括对齐(alignment)、填充(padding)和布局(layout)。
    - Flutter在构建页面时，会调用组件的`build`方法，widget的主要工作是提供一个build()方法来描述如何构建UI界面（通常是通过组合、拼装其它基础widget）。
    - `MaterialApp` 是Material库中提供的Flutter APP框架，通过它可以设置应用的名称、主题、语言、首页及路由列表等。`MaterialApp`也是一个widget。
+   - `Scaffold` 是Material库中提供的页面脚手架，它包含导航栏和Body以及FloatingActionButton（如果需要的话）。 本书后面示例中，路由默认都是通过`Scaffold`创建。
    - `home` 为Flutter应用的首页，它也是一个widget。
 
 4. 首页
@@ -212,14 +213,14 @@ class _MyHomePageState extends State<MyHomePage> {
    ```
 
    - Scaffold 是 Material库中提供的一个widget, 它提供了默认的导航栏、标题和包含主屏幕widget树的body属性。widget树可以很复杂。
-   - body的widget树中包含了一个`Center` widget，`Center` 可以将其子widget树对其到屏幕中心， `Center` 子widget是一个`Column` widget，`Column`的作用是将其所有子widget沿屏幕垂直方向依次排列， 此例中`Column`包含两个 `Text `子widget，第一个`Text` widget显示固定文本 “You have pushed the button this many times:”，第二个`Text` widget显示`_counter`状态的数值。
+   - body的widget树中包含了一个`Center` widget，`Center` 可以将其子widget树对齐到屏幕中心， `Center` 子widget是一个`Column` widget，`Column`的作用是将其所有子widget沿屏幕垂直方向依次排列， 此例中`Column`包含两个 `Text `子widget，第一个`Text` widget显示固定文本 “You have pushed the button this many times:”，第二个`Text` widget显示`_counter`状态的数值。
    - floatingActionButton是页面右下角的带“➕”的悬浮按钮，它的`onPressed`属性接受一个回调函数，代表它本点击后的处理器，本例中直接将`_incrementCounter`作为其处理函数。
 
 
 
-```
-  现在，我们将整个流程串起来：当右下角的floatingActionButton按钮被点击之后，会调用`_incrementCounter`，在`_incrementCounter`中，首先会自增`_counter`计数器（状态），然后`setState`会通知Flutter框架状态发生变化，接着，flutter会调用`build`方法以新的状态重新构建UI，最终显示在设备屏幕上。
-```
+
+  现在，我们将整个流程串起来：当右下角的floatingActionButton按钮被点击之后，会调用`_incrementCounter`，在`_incrementCounter`中，首先会自增`_counter`计数器（状态），然后`setState`会通知Flutter框架状态发生变化，接着，Flutter会调用`build`方法以新的状态重新构建UI，最终显示在设备屏幕上。
+
 
 #### 为什么要将build方法放在State中，而不是放在StatefulWidget中？
 
@@ -257,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
   这样很显然是不合理的，因为
 
   1. `AnimatedWidget`的状态对象是`AnimatedWidget`内部实现细节，不应该暴露给外部。
-  2. 如果要将父类状态暴露给子类，那么必须得有一种传递机制，而做这一套传递机制是无意义的，因为父子类之间状态的传递和子类本省逻辑是无关的。
+  2. 如果要将父类状态暴露给子类，那么必须得有一种传递机制，而做这一套传递机制是无意义的，因为父子类之间状态的传递和子类本身逻辑是无关的。
 
 综上所述，可以发现，对于StatefulWidget，将`build`方法放在State中，可以给开发带来很大的灵活性。
 
